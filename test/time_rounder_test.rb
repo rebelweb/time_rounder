@@ -5,4 +5,8 @@ class TimeRounderTest < Minitest::Test
     refute_nil ::TimeRounder::VERSION
   end
 
+  def test_that_seconds_to_hours_calls_external_functionality
+    assert_equal 0.0, TimeRounder.seconds_to_hours(0)
+  end
+
 end
