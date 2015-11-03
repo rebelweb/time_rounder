@@ -6,7 +6,7 @@ require 'time_rounder/version'
 Gem::Specification.new do |spec|
   spec.name          = "time_rounder"
   spec.version       = TimeRounder::VERSION
-  spec.authors       = ["Ryan"]
+  spec.authors       = ["Ryan Condron"]
   spec.email         = ["rebelwebdevelopment@gmail.com"]
 
   spec.summary       = %q{ Round time with ease }
