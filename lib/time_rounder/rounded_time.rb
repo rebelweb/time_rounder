@@ -4,6 +4,9 @@
 module TimeRounder
   class RoundedTime
 
+    ##
+    # returns the DateTime/Time object on the correct quarter hour
+
     def rounded_time
       @@time += magic_number
       @@time
@@ -19,7 +22,7 @@ module TimeRounder
     end
 
     ##
-    # The number of minutes to add to the time to get to the nearest quarter hour
+    # The number of seconds to add to the time to get to the nearest quarter hour
 
     def magic_number
       minutes_hash[minutes] * 60
