@@ -9,6 +9,7 @@ module TimeRounder
 
     def rounded_time
       @@time += magic_number
+      @@time -= @@time.sec
       @@time
     end
 

@@ -3,7 +3,11 @@ require 'test_helper'
 module TimeRounder
   class TimeRounderTest < Minitest::Test
     def date(minute)
-      Time.new(2015, 11, 01, 14, minute, 00)
+      Time.new(2015, 11, 01, 14, minute, 43)
+    end
+
+    def test_seconds_are_zero
+      assert_equal '00', TimeRounder::RoundedTime.new(date(0)).rounded_time.strftime('%S')
     end
 
     def test_zero_minutes
