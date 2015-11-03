@@ -20,10 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
-TimeRounder has simple methods to access internal classes that calculate the rounded time.
+TimeRounder has simple methods to access internal classes that calculate the total hours to the nearest quarter hours in a given number of seconds.
 
 ```ruby
 TimeRounder.seconds_to_hours(seconds)
+```
+
+TimeRounder can also take a DateTime/Time object and round it to the nearest quarter hour
+
+```ruby
+TimeRounder.rounded_time(seconds)
 ```
 
 ## Development
