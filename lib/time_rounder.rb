@@ -14,4 +14,11 @@ module TimeRounder
     TimeRounder::RoundedTimeFromSeconds.new(seconds).rounded_time
   end
 
+  ##
+  # Takes a DateTime/Time object and returns the time to the nearest quarter hour
+
+  def self.rounded_time(time)
+    TimeRounder::RoundedTime.new(time).rounded_time
+  end
+
 end
