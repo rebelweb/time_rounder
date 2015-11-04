@@ -23,13 +23,13 @@ Or install it yourself as:
 TimeRounder has simple methods to access internal classes that calculate the total hours to the nearest quarter hours in a given number of seconds.
 
 ```ruby
-TimeRounder.seconds_to_hours(seconds)
+TimeRounder.seconds_to_hours(seconds) #seconds is the total seconds to be rounded into quarter hours
 ```
 
 TimeRounder can also take a DateTime/Time object and round it to the nearest quarter hour
 
 ```ruby
-TimeRounder.rounded_time(seconds)
+TimeRounder.rounded_time(date) #date is DateTime/Time object
 ```
 
 ## Development
