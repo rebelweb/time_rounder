@@ -1,4 +1,5 @@
 require 'test_helper'
+require "time_rounder/schedule/fifteen_minute"
 
 module TimeRounder
   module Schedule
