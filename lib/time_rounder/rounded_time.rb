@@ -1,12 +1,12 @@
-require 'time_rounder/schedule/fifteen_minute'
+require "time_rounder/load_schedule"
 
 ##
 # Round a Time/DateTime object to Quarter Hours 0, 15, 30, 45
 
 module TimeRounder
   class RoundedTime
-    include TimeRounder::Schedule::FifteenMinute
-    
+    include TimeRounder::LoadSchedule
+
     ##
     # returns the DateTime/Time object on the correct quarter hour
 
@@ -21,8 +21,9 @@ module TimeRounder
     ##
     # initailize the object with a date/time object
 
-    def initialize(time)
+    def initialize(time, schedule=15)
       @@time = time
+      get_schedule(schedule)
     end
 
     ##
