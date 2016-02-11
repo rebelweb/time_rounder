@@ -1,6 +1,7 @@
 require "time_rounder/version"
 require "time_rounder/rounded_time_from_seconds"
 require "time_rounder/rounded_time"
+require "time_rounder/schedule/fifteen_minute"
 
 ##
 # TimeRounder is a library to round time.
