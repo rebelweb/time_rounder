@@ -1,11 +1,11 @@
-require "time_rounder/schedule/fifteen_minute"
+require "time_rounder/load_schedule"
 
 ##
 # Takes seconds and returns a decimal of hours and partial hours.
 
 module TimeRounder
   class RoundedTimeFromSeconds
-    include TimeRounder::Schedule::FifteenMinute
+    include TimeRounder::LoadSchedule
 
     ##
     # Returns the total rounded hours in the number of seconds
@@ -17,8 +17,9 @@ module TimeRounder
 
     private
 
-    def initialize(seconds)
+    def initialize(seconds, schedule=15)
       @@seconds = seconds
+      get_schedule(schedule)
     end
 
     ##
