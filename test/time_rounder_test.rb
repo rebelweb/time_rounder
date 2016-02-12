@@ -19,6 +19,10 @@ class TimeRounderTest < Minitest::Test
   end
 
   def test_difference_between_two_rounded_times
-    assert_equal 0.25, TimeRounder.difference_between_rounded_times(date(1), date(16), 15)
+    assert_equal 0.25, TimeRounder.difference_between_rounded_times(date(1), date(8), 15)
+  end
+
+  def test_difference_between_two_times
+    assert_equal 0.0, TimeRounder.difference_between_times(date(1), date(8), 15)
   end
 end

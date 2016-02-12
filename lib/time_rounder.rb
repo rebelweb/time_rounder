@@ -31,4 +31,11 @@ module TimeRounder
     seconds = (e - s).to_i
     TimeRounder::RoundedTimeFromSeconds.new(seconds, schedule).rounded_time
   end
+
+  ##
+  # Calculates the difference between 2 standard times
+  def self.difference_between_times(start_time, end_time, schedule=15)
+    seconds = (end_time - start_time).to_i
+    TimeRounder::RoundedTimeFromSeconds.new(seconds, schedule).rounded_time
+  end
 end
