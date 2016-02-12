@@ -11,15 +11,14 @@ module TimeRounder
   ##
   # Takes number of seconds and returns hours and partial hours in decimal form.
 
-  def self.seconds_to_hours(seconds)
+  def self.seconds_to_hours(seconds. schedule=15)
     TimeRounder::RoundedTimeFromSeconds.new(seconds).rounded_time
   end
 
   ##
   # Takes a DateTime/Time object and returns the time to the nearest quarter hour
 
-  def self.rounded_time(time)
+  def self.rounded_time(time, schedule=15)
     TimeRounder::RoundedTime.new(time).rounded_time
   end
-
 end
