@@ -18,4 +18,7 @@ class TimeRounderTest < Minitest::Test
     assert_equal '14:00', TimeRounder.rounded_time(date(0)).strftime('%H:%M')
   end
 
+  def test_difference_between_two_rounded_times
+    assert_equal 0.25, TimeRounder.difference_between_rounded_times(date(1), date(16), 15)
+  end
 end

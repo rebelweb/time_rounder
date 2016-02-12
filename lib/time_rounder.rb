@@ -12,7 +12,7 @@ module TimeRounder
   ##
   # Takes number of seconds and returns hours and partial hours in decimal form.
 
-  def self.seconds_to_hours(seconds. schedule=15)
+  def self.seconds_to_hours(seconds, schedule=15)
     TimeRounder::RoundedTimeFromSeconds.new(seconds).rounded_time
   end
 
@@ -21,5 +21,14 @@ module TimeRounder
 
   def self.rounded_time(time, schedule=15)
     TimeRounder::RoundedTime.new(time).rounded_time
+  end
+
+  ##
+  # Calculates the difference between 2 rounded times
+  def self.difference_between_rounded_times(start_time, end_time, schedule=15)
+    s = TimeRounder::RoundedTime.new(start_time, schedule).rounded_time
+    e = TimeRounder::RoundedTime.new(end_time, schedule).rounded_time
+    seconds = (e - s).to_i
+    TimeRounder::RoundedTimeFromSeconds.new(seconds, schedule).rounded_time
   end
 end
