@@ -1,9 +1,8 @@
 require 'test_helper'
 
 class TimeRounderTest < Minitest::Test
-
   def date(minute)
-    Time.new(2015, 11, 01, 14, minute, 00)
+    Time.new(2015, 11, 1, 14, minute, 0)
   end
 
   def test_that_it_has_a_version_number
@@ -19,7 +18,8 @@ class TimeRounderTest < Minitest::Test
   end
 
   def test_difference_between_two_rounded_times
-    assert_equal 0.25, TimeRounder.difference_between_rounded_times(date(1), date(8), 15)
+    diff = TimeRounder.difference_between_rounded_times(date(1), date(8), 15)
+    assert_equal 0.25, diff
   end
 
   def test_difference_between_two_times
