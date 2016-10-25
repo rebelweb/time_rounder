@@ -1,10 +1,12 @@
-require "time_rounder/load_schedule"
+require 'time_rounder/load_schedule'
 
 module TimeRounder
   ##
   # Takes seconds and returns a decimal of hours and partial hours.
   class RoundedTimeFromSeconds
     include TimeRounder::LoadSchedule
+
+    attr_accessor :seconds
 
     ##
     # Returns the total rounded hours in the number of seconds
@@ -17,7 +19,7 @@ module TimeRounder
     private
 
     def initialize(seconds, schedule = 15)
-      @@seconds = seconds
+      self.seconds = seconds
       get_schedule(schedule)
     end
 
@@ -31,14 +33,14 @@ module TimeRounder
     ##
     # Takes the number of seconds and returns the number of hours as an integer.
     def hours
-      @@seconds / 3600
+      seconds / 3600
     end
 
     ##
     # Takes the remainder of seconds after the hours removed and retrieve the
     # left over minutes.
     def minutes
-      (@@seconds % 3600) / 60
+      (seconds % 3600) / 60
     end
 
     ##

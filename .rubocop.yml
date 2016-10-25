@@ -1,0 +1,7 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - time_rounder.gemspec
+    - bin/console
