@@ -11,8 +11,10 @@ module TimeRounder
     ##
     # returns the DateTime/Time object on the correct quarter hour
     def rounded_time
-      self.time += magic_number
-      self.time -= time.sec
+      number_to_add = magic_number
+      seconds_to_remove = (time.sec + (minutes * 60))
+      self.time -= seconds_to_remove
+      self.time += number_to_add
       time
     end
 
@@ -29,7 +31,7 @@ module TimeRounder
     # The number of seconds to add to the time to get to the nearest quarter
     # hour
     def magic_number
-      minutes_to_closest_partial[minutes] * 60
+      minutes_to_closest_partial(minutes) * 60
     end
 
     ##

@@ -4,7 +4,6 @@ module TimeRounder
   ##
   # Handles loading of the proper schedule
   module LoadSchedule
-
     ##
     # loads the proper schedule based what minute is passed
     def get_schedule(minutes)
