@@ -2,6 +2,8 @@
 
 TimeRounder is a gem born to solve a problem, which is to round time, without all the complex math. TimeRounder defeats all the complex math used to round time, by using logic.
 
+__Note: Support for Ruby 1.9.3 & 2.0.x has been dropped.__
+
 ## Installation
 
 Add this line to your application's Gemfile:
